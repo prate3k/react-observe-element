@@ -1,0 +1,25 @@
+{
+  "name": "reactify-observe",
+  "version": "1.0.0",
+  "description": "Make element observable in reactify way ;)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prate3k/reactify-observe.git"
+  },
+  "keywords": [
+    "React",
+    "Observer",
+    "Observe Element",
+    "React Observe Element"
+  ],
+  "author": "Prateek Kathote",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prate3k/reactify-observe/issues"
+  },
+  "homepage": "https://github.com/prate3k/reactify-observe#readme"
+}
