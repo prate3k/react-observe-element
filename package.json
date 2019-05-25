@@ -21,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/prate3k/reactify-observe/issues"
   },
-  "homepage": "https://github.com/prate3k/reactify-observe#readme"
+  "homepage": "https://github.com/prate3k/reactify-observe#readme",
+  "dependencies": {
+    "react": "16.8.6",
+    "webpack": "4.32.2"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "8.0.6",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-react-jsx": "6.24.1",
+    "babel-preset-env": "1.7.0",
+    "webpack-cli": "3.3.2"
+  }
 }
