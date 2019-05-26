@@ -1,15 +1,25 @@
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
-	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+	mode: NODE_ENV === 'production' || NODE_ENV === 'build' ? 'production' : 'development',
 	entry: {
-		index: './src/index.js',
-		ObserverComponent: './src/ObserverComponent.js'
+		"index": './src/index.js',
+		"minified/index.min": './src/index.js',
+		"ObserverComponent": './src/ObserverComponent.js',
+		"minified/ObserverComponent.min": './src/ObserverComponent.js'
+	},
+	optimization: {
+		minimizer: [new UglifyJsPlugin({
+			include: /\.min\.js$/
+		})],
+		namedModules: true
 	},
 	target: 'web',
 	output: {
-		path: path.resolve(__dirname, 'lib'),
+		path: path.resolve(__dirname, 'dist'),
 		filename: '[name].js',
 		libraryTarget: 'commonjs2',
 		umdNamedDefine: true
@@ -19,7 +29,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				include: path.resolve(__dirname, 'src'),
-				exclude: /(node_modules|lib)/,
+				exclude: /(node_modules|dist)/,
 				use: {
 					loader: 'babel-loader'
 				}
@@ -27,7 +37,6 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.NamedModulesPlugin(),
 		new webpack.ProvidePlugin({
 			"React": "react"
 		})
