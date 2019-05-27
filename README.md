@@ -1,7 +1,6 @@
 # reactify-observe
 > 4KB (gzipped) React Component equivalent implementation of IntersectionObserver.observe()
 
-#### Examples :
 
 ##### Install the package :
 ```bash
