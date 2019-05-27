@@ -113,7 +113,7 @@ Used to specify the root container, with respect to which component will be obse
 function setRootContainerFn () {
 	return < some_other_dom_container_ref >;
 }
-<ObserverComponent setRootContainer={}/>
+<ObserverComponent setRootContainer={setRootContainerFn} />
 ``` 
 
 License
