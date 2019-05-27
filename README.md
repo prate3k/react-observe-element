@@ -4,17 +4,17 @@
 
 ##### Install the package :
 ```bash
-npm install reactify-observer --save
+npm install reactify-observe --save
 ```
 
 ##### Import the component (including IntersectionObserver polyfill) :
 ```javascript
-import ObserverElement from 'reactify-observer';
+import ObserverElement from 'reactify-observe';
 ```
 
 ##### Import just the component (without IntersectionObserver polyfill) :
 ```javascript
-import ObserverElement from 'reactify-observer/ObserverComponent';
+import ObserverElement from 'reactify-observe/ObserverComponent';
 ```
 
 ##### Usage : 
