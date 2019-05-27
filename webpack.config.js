@@ -8,8 +8,8 @@ module.exports = {
 	entry: {
 		"index": './src/index.js',
 		"minified/index.min": './src/index.js',
-		"ObserverComponent": './src/ObserverComponent.js',
-		"minified/ObserverComponent.min": './src/ObserverComponent.js'
+		"ObserverComponent/index": './src/ObserverComponent.js',
+		"minified/ObserverComponent/index.min": './src/ObserverComponent.js'
 	},
 	optimization: {
 		minimizer: [new UglifyJsPlugin({
