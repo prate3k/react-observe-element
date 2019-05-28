@@ -99,13 +99,14 @@ Similar to [rootMargin](https://developer.mozilla.org/en-US/docs/Web/API/Interse
 #### props.setRootContainer :
 > Function &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; optional
 
-> Return Value : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOMElement
+> Return Value : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DOMElement or undefined
 
 Used to specify the root container, with respect to which component will be observed. If the function does not return anything or its not specified, it by default takes viewport.
 ```javascript
 function setRootContainerFn () {
 	return < some_other_dom_container_ref >;
 }
+
 <ObserverComponent setRootContainer={setRootContainerFn} />
 ``` 
 
