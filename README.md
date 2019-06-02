@@ -64,6 +64,35 @@ function onElementShown(entry) { // This function will get call once element get
 ```
 Argument passed to onShow callback function is of type [IntersectionObserverElement](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry).
 
+#### props.onStartObserving :
+> Function &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; optional
+
+Callback function which gets called before it start observing element.
+
+```javascript
+function onStartObserving(container) { // This function will get call once element gets shown
+	< your_custom_logic >
+}
+
+<ObserverComponent onStartObserving={onStartObserving} />
+```
+Argument passed to onStartObserving callback function is of type HTMLDivElement (basically container dom reference).
+
+
+#### props.onStopObserving :
+> Function &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; optional
+
+Callback function which gets called before it stop observing element.
+
+```javascript
+function onStopObserving(container) { // This function will get call once element gets shown
+	< your_custom_logic >
+}
+
+<ObserverComponent onStopObserving={onStopObserving} />
+```
+Argument passed to onStopObserving callback function is of type HTMLDivElement (basically container dom reference).
+
 #### props.once :
 > Boolean &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; optional &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; false
 

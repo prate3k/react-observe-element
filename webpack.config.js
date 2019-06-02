@@ -1,20 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
 	mode: NODE_ENV === 'production' || NODE_ENV === 'build' ? 'production' : 'development',
 	entry: {
 		"index": './src/index.js',
-		"minified/index.min": './src/index.js',
-		"ObserverComponent/index": './src/ObserverComponent.js',
-		"minified/ObserverComponent/index.min": './src/ObserverComponent.js'
+		"ObserverComponent": './src/ObserverComponent.js'
 	},
 	optimization: {
-		minimizer: [new UglifyJsPlugin({
-			include: /\.min\.js$/
-		})],
 		namedModules: true
 	},
 	target: 'web',

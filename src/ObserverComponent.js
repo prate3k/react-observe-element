@@ -6,6 +6,8 @@ export default class ObserverComponent extends PureComponent {
 		children: PropTypes.element,
 		className: PropTypes.string,
 		onShow: PropTypes.func,
+		onStartObserving: PropTypes.func,
+		onStopObserving: PropTypes.func,
 		once: PropTypes.bool,
 		visiblePercentage: PropTypes.oneOf(PropTypes.number, PropTypes.arrayOf(PropTypes.number)),
 		offset: PropTypes.shape({
@@ -35,20 +37,22 @@ export default class ObserverComponent extends PureComponent {
 	}
 
 	stopObserving = () => {
+		typeof this.props.onStopObserving === 'function' && this.props.onStopObserving(this.container);
 		this.container && this.observer && this.observer.unobserve(this.container);
 	};
 
 	startObserving = () => {
+		typeof this.props.onStartObserving === 'function' && this.props.onStartObserving(this.container);
 		this.container && this.observer.observe(this.container);
 	};
 
 	handleIntersect = enteries => {
 		enteries.filter(entry => entry.isIntersecting).map(entry => {
 			typeof this.props.onShow === 'function' && this.props.onShow(entry);
+			if (this.props.once) {
+				this.stopObserving();
+			}
 		});
-		if (this.props.once) {
-			this.stopObserving();
-		}
 	};
 
 	initObserve = () => {
@@ -66,11 +70,6 @@ export default class ObserverComponent extends PureComponent {
 	};
 
 	componentDidMount() {
-		this.initObserve();
-	}
-
-	componentDidUpdate() {
-		this.stopObserving();
 		this.initObserve();
 	}
 
