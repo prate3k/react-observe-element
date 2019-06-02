@@ -1,5 +1,5 @@
 import React from "react";
-import ObserverComponent from "../ObserverComponent.js";
+import ObserverComponent from 'reactify-observe';
 
 export default class Example extends React.Component {
 	state = {
